@@ -11,8 +11,8 @@ public class PullMeasurer : XRBaseInteractable
     public Transform start = null;
     public Transform end = null;
 
-    // This value from 0 to 1 defines how strong the pull is
-    // and also the position that the string will have (middle point)
+    // This will be a value from 0 to 1, defines how strong the pull is
+    // and also the position that the bow's string will have (middle point)
     private float pullAmount = 0.0f;
     public float PullAmount => pullAmount;
 
