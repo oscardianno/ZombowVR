@@ -54,7 +54,47 @@ ModelImporter:
   - first:
       74: -2469224417514991532
     second: CharacterArmature|Walk_Carry
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bones
+    second: {fileID: 2100000, guid: 7dc46f5b9c5111b40a3bfa115092e10b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brain
+    second: {fileID: 2100000, guid: 3385cb6e66257874da69978580913a55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Clothes
+    second: {fileID: 2100000, guid: 2922a6670c4658a449e1767b4b4cdc91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DarkClothes
+    second: {fileID: 2100000, guid: 12f9a955d611ee84fbf29ce9d17300e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Face
+    second: {fileID: 2100000, guid: 3a2318487eeaeae4e86dbb8a9397e5ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Guts
+    second: {fileID: 2100000, guid: 235db95c82135ad488f949541ea45d8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pants
+    second: {fileID: 2100000, guid: 32b10c9ef96fdb147b18eabfcd4148b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin
+    second: {fileID: 2100000, guid: 17b840e5855382e42b73dbf4728a3689, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
