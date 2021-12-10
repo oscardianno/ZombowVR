@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DoorTarget : MonoBehaviour
 {
-    private float initialHealth = 100;
+    private float initialHealth = 1000;
     [SerializeField]
     private float health;
 

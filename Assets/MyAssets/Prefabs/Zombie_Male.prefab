@@ -309,7 +309,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2248607740242001696}
-  - component: {fileID: 1782881941980367660}
   - component: {fileID: 1782881941980367661}
   - component: {fileID: 1782881941980367656}
   - component: {fileID: 1782881941980367699}
@@ -338,22 +337,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 248.45, z: 0}
---- !u!54 &1782881941980367660
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1477031693530506650}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!136 &1782881941980367661
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -379,7 +362,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -477,9 +460,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  deathAudio: {fileID: 8300000, guid: 3f9bfe78e966407419569f2461a007c4, type: 3}
-  doorHitAudio: {fileID: 8300000, guid: 050a238b5911e4049969cdb7a5b0e2a4, type: 3}
-  doorHitAudio2: {fileID: 8300000, guid: c7a37d6792cf1ac48bc642969f2a4a63, type: 3}
+  hitClips:
+  - {fileID: 8300000, guid: 050a238b5911e4049969cdb7a5b0e2a4, type: 3}
+  - {fileID: 8300000, guid: a0f0b9b68487a834ca8c21e3fa667f6d, type: 3}
+  - {fileID: 8300000, guid: 3f9bfe78e966407419569f2461a007c4, type: 3}
+  moanClips:
+  - {fileID: 8300000, guid: 12a3fe540d90e4c48a08b21f68a3977c, type: 3}
+  - {fileID: 8300000, guid: 3207b7c4aac00274bbb14d97a5722bac, type: 3}
+  spawnClips:
+  - {fileID: 8300000, guid: f849e3247cfc54b4bbf2aed6532b3053, type: 3}
+  - {fileID: 8300000, guid: 97f2985fffe88224fb852431c016bb4f, type: 3}
+  - {fileID: 8300000, guid: 0e8c16ee7416c49419ac8ef073ab29dd, type: 3}
+  impactClips:
+  - {fileID: 8300000, guid: 0455d08e54c3e6543abd1fd42f2cf2dc, type: 3}
+  - {fileID: 8300000, guid: c7a37d6792cf1ac48bc642969f2a4a63, type: 3}
+  - {fileID: 8300000, guid: 54155cd7114319649a1a05b83c6a5b77, type: 3}
 --- !u!195 &1782881941980367663
 NavMeshAgent:
   m_ObjectHideFlags: 0

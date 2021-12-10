@@ -57,6 +57,7 @@ public class Arrow : XRGrabInteractable
             SetLaunch(true);
             UpdateLastPosition();
             ApplyForce(notch.PullMeasurer);
+            //Debug.Log("An arrow has been launched.");
         }
     }
 
@@ -90,7 +91,10 @@ public class Arrow : XRGrabInteractable
             if (updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
             {
                 if (CheckForCollision())
+                {
+                    //Debug.Log("There was a collision!");
                     launched = false;
+                }
 
                 UpdateLastPosition();
             }
@@ -143,6 +147,9 @@ public class Arrow : XRGrabInteractable
 
         // If we find a valid component, call whatever functionality it has
         if (hittable != null)
+        {
+            //Debug.Log("Calling Hit() on hittable.");
             hittable.Hit(this);
+        }
     }
 }
