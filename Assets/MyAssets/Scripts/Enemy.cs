@@ -33,30 +33,6 @@ public class Enemy : MonoBehaviour, IArrowHittable
     public AudioClip[] impactClips;
     private AudioSource audioSource;
 
-    public void Hit(Arrow arrow)
-    {
-        //Debug.Log(name + " was hit");
-        PlayRandomAudioClip(hitClips, hitClipsNo);
-
-        health -= 100;
-        if (health <= 0)
-        {
-            Death();
-        }
-    }
-
-    private void Death()
-    {
-        //Debug.Log(name + " has died");
-        agent.enabled = false;
-        // Play sound
-        PlayRandomAudioClip(hitClips, hitClipsNo);
-        // Play Death animation
-        anim.SetTrigger(dieHash);
-
-        Destroy(this);
-        Destroy(gameObject, 2);
-    }
 
     /*private void ApplyMaterial()
     {
@@ -146,5 +122,29 @@ public class Enemy : MonoBehaviour, IArrowHittable
     private void PlayRandomAudioClip(AudioClip[] audioClips, int audioClipsNo)
     {
         audioSource.PlayOneShot(audioClips[Random.Range(0, audioClipsNo)]);
+    }
+    public void Hit(Arrow arrow)
+    {
+        //Debug.Log(name + " was hit");
+        PlayRandomAudioClip(hitClips, hitClipsNo);
+
+        health -= 100;
+        if (health <= 0)
+        {
+            Death();
+        }
+    }
+
+    private void Death()
+    {
+        //Debug.Log(name + " has died");
+        agent.enabled = false;
+        // Play sound
+        PlayRandomAudioClip(hitClips, hitClipsNo);
+        // Play Death animation
+        anim.SetTrigger(dieHash);
+
+        Destroy(this);
+        Destroy(gameObject, 2);
     }
 }
