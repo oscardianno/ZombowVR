@@ -19,7 +19,6 @@ public class Enemy : MonoBehaviour, IArrowHittable
     
     private Animator anim;
     private int speedHash = Animator.StringToHash("Speed");
-    private int aliveHash = Animator.StringToHash("Alive");
     private int dieHash = Animator.StringToHash("Die");
     private int attackHash = Animator.StringToHash("Attack");
 
@@ -33,22 +32,10 @@ public class Enemy : MonoBehaviour, IArrowHittable
     public AudioClip[] impactClips;
     private AudioSource audioSource;
 
-
-    /*private void ApplyMaterial()
-    {
-        SkinnedMeshRenderer skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
-        Material[] materials = skinnedMeshRenderer.materials;
-        foreach (Material material in materials)
-        {
-            material.set
-        }
-    }*/
-
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        anim.SetBool(aliveHash, true);
         agent = GetComponent<NavMeshAgent>();
         //agent = null; 
         doorTarget = GameObject.FindGameObjectWithTag("Target").GetComponent<DoorTarget>();
@@ -75,15 +62,14 @@ public class Enemy : MonoBehaviour, IArrowHittable
                 // Stop the enemy movement when he has arrived the target
                 if (Vector3.Distance(doorTransform.position, transform.position) < 2.0f)
                 {
-                    // Avoid the enemy's Rigidbody to bounce or do weird stuff
-                    //GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ |
-                    //    RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
                     agent.enabled = false;
                     agent.velocity = Vector3.zero;
                     // Pass 0 speed to animator
                     anim.SetFloat(speedHash, 0f);
 
                     readyToAttack = true;
+                    // Increase the timer count so the first hit is instantaneous
+                    attackTimer = attackCooldown + 1;
                 } else
                 {
                     agent.SetDestination(doorTransform.position);

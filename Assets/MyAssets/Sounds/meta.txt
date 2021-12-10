@@ -8,3 +8,9 @@ ZombieAttack_370036__punisherman__grunt.wav.meta
 ZombieDeath_193759__nanity05__zombie.wav.meta
 ZombieHit_555420__tonsil5__zombie-hit-1.wav.meta
 ZombieSpawn_163440__under7dude__zombie-1.wav.meta
+
+Mummy Zombie-SoundBible.com-1966938763
+Zombie Gets Attacked-SoundBible.com-20348330
+Zombie Moan-SoundBible.com-565291980
+
+https://incompetech.com/wordpress/2014/05/game-pack-2-medieval/

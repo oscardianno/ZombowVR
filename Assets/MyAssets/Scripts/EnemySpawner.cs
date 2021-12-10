@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public float spawnTime = 1;
     public GameObject spawnGameObject;
     public Transform[] spawnPoints;
+    private int spawnedCount = 0;
+    private float minSpawnTime = 4f;
+    private float maxSpawnTime = 8f;
+    private float spawnTime = 2f;
     private float timer;
 
     // Start is called before the first frame update
@@ -23,6 +26,21 @@ public class EnemySpawner : MonoBehaviour
             Transform randomPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
             Instantiate(spawnGameObject, randomPoint.position, randomPoint.rotation);
             nextRandomSpawnTime();
+
+            spawnedCount++;
+            // Decrease the min and max spawnTimes each 5 enemies spawned
+            if (spawnedCount % 5 == 0)
+            {
+                // With a lowest minimum of 1 second from spawn
+                if (minSpawnTime > 1f)
+                {
+                    minSpawnTime -= 0.5f;
+                }
+                if (maxSpawnTime > 1f)
+                {
+                    maxSpawnTime -= 0.5f;
+                }
+            }
         }
         timer += Time.deltaTime;
     }
@@ -30,6 +48,6 @@ public class EnemySpawner : MonoBehaviour
     private void nextRandomSpawnTime()
     {
         timer = 0;
-        spawnTime = Random.Range(2, 5);
+        spawnTime = Random.Range(minSpawnTime, maxSpawnTime);
     }
 }
