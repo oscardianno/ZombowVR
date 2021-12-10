@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject spawnGameObject;
-    public Transform[] spawnPoints;
+    [SerializeField]
+    private GameObject spawnGameObject;
+    [SerializeField]
+    private Transform[] spawnPoints;
     private int spawnedCount = 0;
     private float minSpawnTime = 4f;
     private float maxSpawnTime = 8f;
@@ -25,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
         {
             Transform randomPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
             Instantiate(spawnGameObject, randomPoint.position, randomPoint.rotation);
-            nextRandomSpawnTime();
+            NextRandomSpawnTime();
 
             spawnedCount++;
             // Decrease the min and max spawnTimes each 5 enemies spawned
@@ -45,7 +47,7 @@ public class EnemySpawner : MonoBehaviour
         timer += Time.deltaTime;
     }
 
-    private void nextRandomSpawnTime()
+    private void NextRandomSpawnTime()
     {
         timer = 0;
         spawnTime = Random.Range(minSpawnTime, maxSpawnTime);

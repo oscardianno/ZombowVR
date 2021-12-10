@@ -4,7 +4,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Arrow : XRGrabInteractable
 {
     [Header("Settings")]
-    public float speed = 2800.0f;
+    [SerializeField]
+    private float speed = 2800.0f;
 
     [Header("Hit")]
     public Transform tip = null;

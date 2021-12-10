@@ -26,10 +26,15 @@ public class Enemy : MonoBehaviour, IArrowHittable
     private int moanClipsNo;
     private int spawnClipsNo;
     private int impactClipsNo;
-    public AudioClip[] hitClips;
-    public AudioClip[] moanClips;
-    public AudioClip[] spawnClips;
-    public AudioClip[] impactClips;
+    [SerializeField]
+    private AudioClip[] hitClips;
+    [SerializeField]
+    private AudioClip[] moanClips;
+    [SerializeField]
+    private AudioClip[] spawnClips;
+    [SerializeField]
+    private AudioClip[] impactClips;
+    [SerializeField]
     private AudioSource audioSource;
 
     // Start is called before the first frame update

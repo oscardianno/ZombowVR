@@ -17,7 +17,8 @@ public class DoorTarget : MonoBehaviour
     private Image blackCanvasImage;
 
     [Header("HealthBar resources")]
-    public Image healthBar;
+    [SerializeField]
+    private Image healthBar;
 
     // Start is called before the first frame update
     void Start()
