@@ -7,6 +7,7 @@ TagManager:
   - EnemyCharacter
   - Target
   - GameOverTarget
+  - BlackCanvas
   layers:
   - Default
   - TransparentFX

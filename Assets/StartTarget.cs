@@ -41,7 +41,7 @@ public class StartTarget : MonoBehaviour, IArrowHittable
     public void Hit(Arrow arrow)
     {
         // Play music
-        FindObjectOfType<MusicHandler>().BeginGameMusic();
+        FindObjectOfType<MusicHandler>().PlayMainSong();
 
         // Get the parent (Title) to disable the whole gameObject
         this.transform.parent.gameObject.SetActive(false);

@@ -9,7 +9,9 @@ public class MusicHandler : MonoBehaviour
     public AudioClip mainSong;
     public AudioClip defeatSong;
     private AudioSource audioSource;
-    private bool musicFadeOutEnabled;
+    private bool musicFadeOutEnabled = false;
+
+    private AudioClip songInQueue;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,7 @@ public class MusicHandler : MonoBehaviour
                 audioSource.Stop();
                 audioSource.volume = defaultVolume;
                 musicFadeOutEnabled = false;
-                PlayMainSong();
+                PlaySongInQueue();
             }
             else
             {
@@ -42,18 +44,20 @@ public class MusicHandler : MonoBehaviour
         }
     }
 
-    public void BeginGameMusic()
+    private void PlaySongInQueue()
     {
-        musicFadeOutEnabled = true;
+        audioSource.PlayOneShot(songInQueue);
     }
 
     public void PlayMainSong()
     {
-        audioSource.PlayOneShot(mainSong);
+        musicFadeOutEnabled = true;
+        songInQueue = mainSong;
     }
 
     public void PlayDefeatSong()
     {
+        StopMusic();
         audioSource.PlayOneShot(defeatSong);
     }
 
